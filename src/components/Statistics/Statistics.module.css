@@ -1,0 +1,19 @@
+.FeedbackForm {
+  margin: 20px 50px 20px 50px;
+  width: 375px;
+  border: 1px solid black;
+}
+
+.Title {
+  font-size: 34px;
+}
+
+.StatsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
