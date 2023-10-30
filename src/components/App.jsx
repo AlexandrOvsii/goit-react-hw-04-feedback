@@ -20,17 +20,10 @@ class App extends Component {
     Math.ceil((good / total) * 100);
 
   handleCountFeedback = type => {
-    //хороший вариант, но следующий - самый правильный
-    this.setState({
-      [type]: this.state[type] + 1,
-    });
+    this.setState(prevState => ({
+      [type]: prevState[type] + 1,
+    }));
   };
-
-  // handleCountFeedback = type => {
-  //   this.setState(prevState => ({
-  //     [type]: prevState[type] + 1,
-  //   }));
-  // };
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -43,7 +36,10 @@ class App extends Component {
     return (
       <div className={css.FeedbackForm}>
         <Section title="Please leave feedback">
-          <FeedbackOptions handleCountFeedback={this.handleCountFeedback} />
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            handleCountFeedback={this.handleCountFeedback}
+          />
         </Section>
         <Section title="Statistics">
           {total ? (
