@@ -3,6 +3,7 @@ import css from './FeedbackOptions.module.css';
 
 function FeedbackOptions({ handleCountFeedback, options }) {
   return (
+    
     <div className={css.BtnWrapper}>
       {options.map(option => (
         <button
